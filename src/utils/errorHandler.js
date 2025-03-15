@@ -3,7 +3,7 @@ class errorHandler extends Error{
         statusCode,
         message="something went wrong",
         errors=[],
-        statck=""
+        stack=""
     )
     {
             super(message);
@@ -13,8 +13,8 @@ class errorHandler extends Error{
             this.success=false;
             this.errors=errors
 
-            if(statck){
-                this.statck=statck;
+            if(stack){
+                this.stack=stack;
             }else{
                 Error.captureStackTrace(this,this.constructor)
             }
